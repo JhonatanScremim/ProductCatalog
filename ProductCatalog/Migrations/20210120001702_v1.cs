@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProductCatalog.Migrations
 {
-    public partial class v2 : Migration
+    public partial class v1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,6 +19,23 @@ namespace ProductCatalog.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Category", x => x.IdCategory);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    UserName = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    Email = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    Password = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    BirthDate = table.Column<string>(type: "varchar(10)", maxLength: 10, nullable: false),
+                    IsActive = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.UserId);
                 });
 
             migrationBuilder.CreateTable(
@@ -57,6 +74,9 @@ namespace ProductCatalog.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Product");
+
+            migrationBuilder.DropTable(
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "Category");

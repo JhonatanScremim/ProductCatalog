@@ -10,8 +10,8 @@ using ProductCatalog.Data;
 namespace ProductCatalog.Migrations
 {
     [DbContext(typeof(StoreDataContext))]
-    [Migration("20201209012724_v2")]
-    partial class v2
+    [Migration("20210120001702_v1")]
+    partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -74,6 +74,39 @@ namespace ProductCatalog.Migrations
                     b.HasIndex("IdCategory");
 
                     b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("ProductCatalog.Models.Users", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BirthDate")
+                        .IsRequired()
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("ProductCatalog.Models.Product", b =>

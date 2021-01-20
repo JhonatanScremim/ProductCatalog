@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace ProductCatalog.Models
+{
+    public class Users
+    {
+        public virtual int UserId { get; set; }
+        public virtual string UserName { get; set; }
+        public virtual string Email { get; set; }
+        public virtual string Password { get; set; }
+        public virtual string BirthDate { get; set; }
+        public virtual bool IsActive { get; set; }
+    }
+}

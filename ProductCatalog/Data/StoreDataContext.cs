@@ -8,6 +8,7 @@ namespace ProductCatalog.Data
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Users> Users { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -18,6 +19,7 @@ namespace ProductCatalog.Data
         {
             builder.ApplyConfiguration(new CategoryMap());
             builder.ApplyConfiguration(new ProductMap());
+            builder.ApplyConfiguration(new UserMap());
         }
     }
 }

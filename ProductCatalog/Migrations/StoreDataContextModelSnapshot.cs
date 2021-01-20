@@ -74,6 +74,39 @@ namespace ProductCatalog.Migrations
                     b.ToTable("Product");
                 });
 
+            modelBuilder.Entity("ProductCatalog.Models.Users", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BirthDate")
+                        .IsRequired()
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("ProductCatalog.Models.Product", b =>
                 {
                     b.HasOne("ProductCatalog.Models.Category", "Category")
