@@ -17,7 +17,8 @@ namespace ProductCatalog.Data.Maps
             builder.Property(x => x.UserName).IsRequired().HasMaxLength(100).HasColumnType("varchar(100)");
             builder.Property(x => x.Email).IsRequired().HasMaxLength(100).HasColumnType("varchar(100)");
             builder.Property(x => x.Password).IsRequired().HasMaxLength(100).HasColumnType("varchar(100)");
-            builder.Property(x => x.BirthDate).IsRequired().HasMaxLength(10).HasColumnType("varchar(10)");
+            builder.Property(x => x.DateRegistered).IsRequired();
+            builder.Property(x => x.BirthDate).IsRequired();
             builder.Property(x => x.IsActive).IsRequired();
         }
     }

@@ -11,7 +11,8 @@ namespace ProductCatalog.Models
         public virtual string UserName { get; set; }
         public virtual string Email { get; set; }
         public virtual string Password { get; set; }
-        public virtual string BirthDate { get; set; }
+        public virtual DateTime BirthDate { get; set; }
+        public virtual DateTime DateRegistered { get; set; }
         public virtual bool IsActive { get; set; }
     }
 }

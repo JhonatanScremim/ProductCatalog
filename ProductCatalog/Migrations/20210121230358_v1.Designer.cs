@@ -10,7 +10,7 @@ using ProductCatalog.Data;
 namespace ProductCatalog.Migrations
 {
     [DbContext(typeof(StoreDataContext))]
-    [Migration("20210120001702_v1")]
+    [Migration("20210121230358_v1")]
     partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -82,10 +82,9 @@ namespace ProductCatalog.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BirthDate")
-                        .IsRequired()
-                        .HasColumnType("varchar(10)")
-                        .HasMaxLength(10);
+                    b.Property<DateTime>("BirthDate");
+
+                    b.Property<DateTime>("DateRegistered");
 
                     b.Property<string>("Email")
                         .IsRequired()

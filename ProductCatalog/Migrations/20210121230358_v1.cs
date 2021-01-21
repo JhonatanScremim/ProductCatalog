@@ -30,7 +30,8 @@ namespace ProductCatalog.Migrations
                     UserName = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Email = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Password = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
-                    BirthDate = table.Column<string>(type: "varchar(10)", maxLength: 10, nullable: false),
+                    BirthDate = table.Column<DateTime>(nullable: false),
+                    DateRegistered = table.Column<DateTime>(nullable: false),
                     IsActive = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>

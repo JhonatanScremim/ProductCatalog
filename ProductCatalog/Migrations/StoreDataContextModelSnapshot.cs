@@ -80,10 +80,9 @@ namespace ProductCatalog.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BirthDate")
-                        .IsRequired()
-                        .HasColumnType("varchar(10)")
-                        .HasMaxLength(10);
+                    b.Property<DateTime>("BirthDate");
+
+                    b.Property<DateTime>("DateRegistered");
 
                     b.Property<string>("Email")
                         .IsRequired()
