@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ProductCatalog.Models
 {
-    public class Users
+    public class User
     {
         public virtual int UserId { get; set; }
         public virtual string UserName { get; set; }

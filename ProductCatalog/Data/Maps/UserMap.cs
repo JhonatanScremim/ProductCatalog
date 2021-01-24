@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ProductCatalog.Data.Maps
 {
-    public class UserMap : IEntityTypeConfiguration<Users>
+    public class UserMap : IEntityTypeConfiguration<User>
     {
-        public void Configure(EntityTypeBuilder<Users> builder)
+        public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.ToTable("Users");
             builder.HasKey(x => x.UserId);

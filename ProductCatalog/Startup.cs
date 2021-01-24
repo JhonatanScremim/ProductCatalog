@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProductCatalog.Data;
 using ProductCatalog.Interfaces;
+using ProductCatalog.Repositories;
 using ProductCatalog.Repositorys;
 using ProductCatalog.Services;
 
@@ -28,6 +29,8 @@ namespace ProductCatalog
             services.AddScoped<StoreDataContext, StoreDataContext>();
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUserRepository, UserRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
