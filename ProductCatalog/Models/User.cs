@@ -12,7 +12,7 @@ namespace ProductCatalog.Models
         public virtual string Email { get; set; }
         public virtual string Password { get; set; }
         public virtual DateTime BirthDate { get; set; }
-        public virtual DateTime DateRegistered { get; set; }
+        public virtual DateTime CreateDate { get; set; }
         public virtual bool IsActive { get; set; }
     }
 }
